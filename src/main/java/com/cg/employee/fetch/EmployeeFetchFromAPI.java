@@ -42,7 +42,7 @@ public class EmployeeFetchFromAPI {
 			JsonParser jsonParser = factory.createParser(response);
 			JsonNode node = mapper.readTree(jsonParser);
 			employeeList = mapper.readValue(node.get("content").toString(), new TypeReference<List<Employee>>() {} );
-			service.addEmployeeRecords(employeeList, 1, 100);
+			service.addEmployeeRecords(employeeList);
 			if (100 == employeeList.size()) {
 				i++;
 				isDataAvailable = true;

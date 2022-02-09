@@ -13,7 +13,7 @@ public class EmployeeService {
 	@Autowired
 	EmployeeRepository repository;
 
-	public void addEmployeeRecords(List<Employee> employeeList, int page, int size) {
+	public void addEmployeeRecords(List<Employee> employeeList) {
 		repository.saveAllAndFlush(employeeList);
 	}
 
